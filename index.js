@@ -3,6 +3,18 @@ const { Keyboard } = require('telegram-keyboard');
 const { getFirestore, doc, getDoc, setDoc, collection, getDocs } = require("firebase/firestore");
 const {db} = require('./users')
 const { WizardScene } = Scenes; // Move this line here
+const express = require("express");
+const app = express();
+const port = 3000;
+
+
+app.get("/", function (req, res) {
+  res.send("Hello World!");
+});
+
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}!`);
+});
 
 const adminChatId = 6392652983;
 
